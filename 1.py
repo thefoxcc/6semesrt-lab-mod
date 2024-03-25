@@ -1,3 +1,4 @@
+## 1 задача
 import random
 import numpy as np
 import matplotlib.pyplot as plt
@@ -58,7 +59,8 @@ probabilities = [abs(M_theoretical - mean) < s for mean in variable_means]
 probability = sum(probabilities) / len(probabilities)
 print(f"Вероятность того, что отклонение М от Мi меньше среднеквадратичного отклонения (s={s}): {probability:.5f}")
 
-####
+
+## 2 задача
 # Определим функцию для метода серединных произведений
 def middle_square_method(seed, n):
     numbers = []
@@ -69,10 +71,6 @@ def middle_square_method(seed, n):
         number = int(middle_digits)
         numbers.append(number / 10000)  # Нормируем число, чтобы оно было между 0 и 1
     return numbers
-
 # Сид значение
 seed = 1234
-
-# Повторяем Шаги Задания 1 для нашего генератора
 sequences = {n: middle_square_method(seed, n) for n in N}
-# Затем вам нужно будет повторить вычисления и визуализации, как в Задании 1, заменив sequences на новые значения.
