@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 N = [100, 1000, 10000]
 
+## Задача 1
 sequences = {n: [random.random() for _ in range(n)] for n in N}
-
 # Вычисляем характеристики для каждой последовательности
 for n, sequence in sequences.items():
     M = np.mean(sequence)
@@ -56,7 +56,7 @@ probabilities = [abs(M_theoretical - mean) < s for mean in variable_means]
 probability = sum(probabilities) / len(probabilities)
 print(f"Вероятность того, что отклонение М от Мi меньше среднеквадратичного отклонения (s={s}): {probability:.5f}")
 
-####
+## Задача 2
 # Определим функцию для метода серединных произведений
 def middle_square_method(seed, n):
     numbers = []
@@ -69,6 +69,6 @@ def middle_square_method(seed, n):
     return numbers
 
 # Сид значение
-seed = 1234
+seed = 1000
 
 sequences = {n: middle_square_method(seed, n) for n in N}
