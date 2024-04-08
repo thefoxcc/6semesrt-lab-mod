@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 
 # Параметры для распределения Бернулли
 p = 0.3  # вероятность успеха
-n = 100  # количество испытаний
-max_value = 78  # максимальное значение, получаемое при успехе
+n = 100  # выборка из случайных велечин
+max = 78  # максимальное значение, получаемое при успехе
 
 # Генерация выборки
-sample = np.random.binomial(max_value, p, n)
+sample = np.random.binomial(max, p, n)
 
 # Расчёт характеристик
 M = np.mean(sample)  # математическое ожидание
@@ -21,11 +21,11 @@ print(f'Среднеквадратичное отклонение: {s}')
 
 # Построение гистограммы
 plt.figure(figsize=(10, 5))
-plt.hist(sample, bins=range(0, max_value+1), color='blue', edgecolor='black')
+plt.hist(sample, bins=range(0, max+1), color='blue', edgecolor='black')
 plt.title('Гистограмма распределения Бернулли')
 plt.xlabel('Значения')
 plt.ylabel('Частота')
-plt.xticks(range(0, max_value+1, int(max_value/10)))
+plt.xticks(range(0, max+1, int(max/10)))
 plt.grid(axis='y')
 
 # Построение эмпирической функции распределения
@@ -36,7 +36,7 @@ plt.step(sample_sorted, F, where='mid')
 plt.title('Эмпирическая функция распределения')
 plt.xlabel('Значения')
 plt.ylabel('Вероятность')
-plt.xticks(range(0, max_value+1, int(max_value/10)))
+plt.xticks(range(0, max+1, int(max/10)))
 plt.yticks(np.linspace(0, 1, 11))
 plt.grid(axis='y')
 
