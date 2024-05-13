@@ -121,4 +121,4 @@ average_time = df['время поступления сообщения'].mean()
 
 intensity = 1 / average_time
 print(f'Среднее время между поступлением сообщений: {average_time}')
-print(f'Интенсивность: {intensity}')
+print(f'Интенсивность: {intensity}') # поток собщений 
